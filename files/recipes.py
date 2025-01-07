@@ -1,10 +1,3 @@
-def is_closed(file_):
-    if file_.closed:
-        print('Файл закрыт')
-    else:
-        print('Файл открыт')
-
-
 
 def parse_recipes(file_path):#Создание библиотеки из рецепта
     cook_book = {}
@@ -32,11 +25,7 @@ def parse_recipes(file_path):#Создание библиотеки из рец�
         cook_book[dish_name] = ingredients
         i += 1  # Пропускаем пустую строку после каждого рецепта
 
-    for dish, ingredients in cook_book.items():
-        print(f'Блюдо: {dish}')
-        for ingredient_name, details in ingredients.items():
-            print(f'  Ингредиент: {ingredient_name}, Количество: {details["количество"]}, Единица: {details["единица"]}')
-        print()  # Пустая строка между блюдами
+    #
 
     return cook_book
 
@@ -66,7 +55,7 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 
 
-
+parse_recipes('recipes.txt')
 
 dishes = ['Запеченный картофель', 'Омлет']
 person_count = 2
@@ -75,7 +64,6 @@ print("{")
 for ingredient, details in shopping_list.items():
     print(f"  '{ingredient}': {{'measure': '{details['measure']}', 'quantity': {details['quantity']}}},")
 print("}")
-
 
 
 
